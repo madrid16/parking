@@ -5,16 +5,12 @@
     </h1>
   </div>
 
-  <form>
     <div class="form-group">
       <div class="input-group">
-        <div class="input-group-addon"><i class="fa fa-search"></i></div>
-
-        <input type="text" class="form-control" placeholder="Search da Fish" ng-model="searchFish">
-
+        <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+        <input type="text" class="form-control" placeholder="Search Registration" [(ngModel)]="carValue" />
       </div>
     </div>
-  </form>
 
   <table class="table table-striped">
     <thead>
@@ -25,8 +21,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let car of cars">
-        <th scope="row">1</th>
+      <tr *ngFor="let car of cars | AgePipe:carValue;let i=index">
+        <td>{{ +i }}</td>
         <td>{{ car.registration }}</td>
         <td>{{ car.dateTime }}</td>
       </tr>

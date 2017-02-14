@@ -7,11 +7,13 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent {
-  cars = [
+
+  carValue:string;
+
+  cars:Array<any> = [
     {registration: "AAAA11", dateTime: "15:30"},
     {registration: "BBBB22", dateTime: "15:30"},
     {registration: "CCCC33", dateTime: "15:30"},
     {registration: "DDDD44", dateTime: "15:30"}
   ];
-
 }
