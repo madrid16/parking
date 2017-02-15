@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/angular/webapps/www/parking/
+    overwrite: yes
+hooks:
+  BeforeInstall:
+    - location: deploy/start_server
+      timeout: 60
+      runas: angular
+  ApplicationStop:
+    - location: deploy/stop_server
+      timeout: 60
+      runas: angular

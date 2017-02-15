@@ -10,7 +10,8 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 install:
 - mkdir travis-phantomjs
-- wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+- wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
+  -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
 - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
 - export PATH=$PWD/travis-phantomjs:$PATH
 - npm install -g angular-cli
@@ -22,3 +23,15 @@ branches:
   only:
   - master
   - develop
+deploy:
+  provider: $PROVIDER
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key: $SECRET_ACCESS_KEY
+  revision_type: $REVISION_TYPE
+  application: $APPLICATION
+  deployment_group: $DEPLOYMENT_GROUP
+  on:
+    all_branches: true
+    repo: $REPO
+secret_access_key:
+  secure: $SECURE
