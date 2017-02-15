@@ -16,9 +16,8 @@ install:
 - npm install -g angular-cli
 - npm install -g karma
 - npm install
-- ng build
 script:
-- karma start config/karma.conf.js --single-run
+- karma start karma.conf.js --single-run
 branches:
   only:
   - master
