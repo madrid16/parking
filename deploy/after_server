@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Start serve"
+cd /home/angular/webapps/www/parking/
+sudo npm install -g @angular/cli
+sudo npm install 2>&1 | sudo tee /home/angular/webapps/logs/parking/npm_log.txt

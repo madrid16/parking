@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Before Stop supervisor parking"
+sudo supervisorctl stop parking
