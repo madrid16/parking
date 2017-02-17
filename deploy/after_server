@@ -5,5 +5,3 @@ echo "install angular cli"
 sudo npm install -g @angular/cli
 echo "install dependency"
 sudo npm install 2>&1 | sudo tee /home/angular/webapps/logs/parking/npm_log.txt
-echo "build application"
-sudo ng build --prod 2>&1 | sudo tee /home/angular/webapps/logs/parking/ng_build_log.txt
