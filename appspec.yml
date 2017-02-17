@@ -11,7 +11,7 @@ hooks:
       runas: angular
   AfterInstall:
     - location: deploy/after_server
-      timeout: 300
+      timeout: 600
       runas: angular
   ApplicationStop:
     - location: deploy/stop_server
